@@ -1,0 +1,31 @@
+<html>
+<head>
+<script language="javascript">
+ function envoyerFormulaire(leForm){
+	leForm.submit();
+ }
+ function divVisible(leDiv){
+   document.getElementById(leDiv).style.visibility='visible';
+ }
+ function divInvisible(leDiv){
+   document.getElementById(leDiv).style.visibility='hidden';
+ }
+</script>
+</head>
+<body>
+<input type="button" value="Liste des hospitalisations" onClick="envoyerFormulaire(formListe);">
+<form name="formListe" action="gestionHospitalisations.php" method="post">
+   <input type="hidden" name="monAction" value="obtenirListe">
+</form>
+
+<input type="button" value="Liste par établissement" onClick="divVisible('divListeEtab');">
+<div id="divListeEtab" name="divListeEtab" style="visibility:hidden;position:absolute;top:20%;left:10%;">
+<form name="formListeEtab" action="gestionHospitalisations.php" method="post">
+   Code établissement : <input type="text" id="codeE" name="codeE">
+   <input type="hidden" name="monAction" value="obtenirListeEtab">
+   <input type="button" value="Envoyer" onClick="envoyerFormulaire(formListeEtab);">
+   <img src="images/fermer.png" onClick="divInvisible('divListeEtab')">
+</form>
+</div>
+</body>
+</html>
