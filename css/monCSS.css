@@ -1,8 +1,8 @@
 table {
-border: medium solid #6495ed;
+border: medium solid #e0e0e0;
 border-collapse: collapse;
-width: 50%;
-font-size:12px;
+width: 70%;
+font-size:14px;
 }
 th {
 font-family: monospace;
